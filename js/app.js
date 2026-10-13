@@ -1,7 +1,7 @@
 // TACTICS: M.A.S.K. Builder — application principale (français / anglais)
 import { loadData, loadCustom, withCustom, typeLabel, MERC, unitCost, canPilot } from './data.js';
 import { analyzeArmy, entryCost, blocName, factionName, CAPTURED_SURCHARGE, isJoiner, isCommissar, isAirlifter, isCarriable } from './rules.js';
-import { esc, uid, store, toast, copyText, openModal, unitCardHTML, guessRepo, brandLogo, mountCredit, printCredit, mountFeedback } from './ui.js';
+import { esc, uid, store, toast, copyText, openModal, unitCardHTML, guessRepo, brandLogo, mountCredit, printCredit, mountFeedback, initCamp, mountCampPicker } from './ui.js';
 import { attackHtml } from './dice.js';
 import { t, LANG, initLang, setLang } from './i18n.js';
 import { exportListPDF, pdfDialogHTML, bindPdfDialog } from './pdf.js';
@@ -51,6 +51,7 @@ const app = document.getElementById('app');
 
 // ---------------------------------------------------------------- Démarrage
 initLang();
+initCamp();
 mountCredit();
 init();
 async function init() {
@@ -104,7 +105,6 @@ function topbar(active) {
     <nav class="topnav">
       <a href="#/" class="${active === 'home' ? 'on' : ''}">${t('Mes listes')}</a>
       <a href="#/collection" class="${active === 'collection' ? 'on' : ''}">${t('Ma collection')}</a>
-      <a href="shot.html">Shot Format</a>
       <a href="atelier.html">${t('Atelier')}</a>
       <a href="aide.html">${t('Aide')}</a>
       <button id="lang-btn" type="button" lang="${LANG === 'fr' ? 'en' : 'fr'}" title="${LANG === 'fr' ? 'English version' : 'Version française'}">${LANG === 'fr' ? 'EN' : 'FR'}</button>
@@ -115,6 +115,7 @@ function topbar(active) {
 
 function bindTopbar() {
   mountFeedback();
+  mountCampPicker();
   document.getElementById('lang-btn')?.addEventListener('click', () => { setLang(LANG === 'fr' ? 'en' : 'fr'); location.reload(); });
   document.getElementById('theme-btn')?.addEventListener('click', () => {
     const r = document.documentElement;
@@ -136,7 +137,7 @@ function renderHome() {
   <main class="wrap home">
     <section class="home-hero">
       <div class="eyebrow">${t('Outil communautaire · base {v}', { v: esc(D.meta.version || '') })}</div>
-      <h1 class="h-display">${t('Levez votre armée')}</h1>
+      <h1 class="h-display">${t('Ordinateur, sélectionnez les agents les plus aptes à remplir cette mission')}</h1>
       <p>${t('Les points, les personnages uniques et les duos pilote + véhicule sont vérifiés en direct. {u} unités et {p} pelotons disponibles.', { u: D.units.length, p: D.platoons.length })}</p>
     </section>
     <div class="home-grid">
