@@ -4,7 +4,7 @@ import { validateData, validateCustom, UNIT_TYPES } from './validate.js';
 import { initProposals, renderProposals, pendingCount, normCustom, blobs } from './proposals.js';
 import { framingHTML, mountFraming } from './framing.js';
 import { generatedCardSVG, cardFontsReady } from './cardgen.js';
-import { esc, store, toast, openModal, unitCardHTML, guessRepo, brandLogo, mountCredit } from './ui.js';
+import { esc, store, toast, openModal, unitCardHTML, guessRepo, brandLogo, mountCredit, initCamp } from './ui.js';
 import { shrink } from './images.js';
 import { t, LANG, initLang, setLang } from './i18n.js';
 
@@ -42,6 +42,7 @@ const list = (v) => String(v || '').split(',').map((s) => s.trim()).filter(Boole
 const attacks = (v) => String(v || '').trim().split(/\s+/).filter(Boolean);
 
 initLang();
+initCamp();
 mountCredit();
 init();
 async function init() {
