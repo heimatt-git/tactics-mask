@@ -1,6 +1,6 @@
 {
  "meta": {
-  "version": "2026.10.13.2",
+  "version": "2026.10.13.3",
   "source": "TACTICS: M.A.S.K. — données de fan, non officielles",
   "updated": "2026-10-13"
  },
@@ -33,19 +33,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "mask--thunderhawk"
@@ -76,7 +71,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -84,8 +78,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Missile Launchers",
@@ -95,19 +88,14 @@
      "vsInfantry": [
       "1/2",
       "1/2",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/3",
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "mask--matt-trakker"
@@ -140,19 +128,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "venom--switchblade"
@@ -183,7 +166,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -191,8 +173,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Stinger Missile Launcher",
@@ -202,19 +183,14 @@
      "vsInfantry": [
       "1/2",
       "1/2",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/3",
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "venom--miles-mayhem"
@@ -247,19 +223,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "mask--gator"
@@ -290,19 +261,14 @@
      "vsInfantry": [
       "B/2",
       "B/2",
-      "B/1",
       "B/1"
      ],
      "vsVehicle": [
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Freeze Gun",
@@ -312,7 +278,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -320,8 +285,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "mask--dusty-hayes"
@@ -354,19 +318,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "venom--jackhammer"
@@ -397,7 +356,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -405,8 +363,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Machine Gun Turret",
@@ -416,17 +373,14 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
       "1/2",
       "1/1",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "venom--cliff-dagger"
@@ -459,19 +413,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "mask--shark"
@@ -502,7 +451,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -510,8 +458,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Torpedo Launchers",
@@ -521,19 +468,14 @@
      "vsInfantry": [
       "1/2",
       "1/2",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/3",
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "mask--gloria-baker"
@@ -566,19 +508,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "mask--firecracker"
@@ -610,19 +547,14 @@
      "vsInfantry": [
       "B/2",
       "B/2",
-      "B/1",
       "B/1"
      ],
      "vsVehicle": [
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Rear Freeze Cannons",
@@ -632,7 +564,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -640,8 +571,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "mask--hondo-maclean"
@@ -673,19 +603,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "mask--rhino"
@@ -701,7 +626,7 @@
    "health": 7,
    "move": 2,
    "march": 5,
-   "armor": 3,
+   "armor": 4,
    "capturable": false,
    "skills": [
     "Battering Ram",
@@ -717,19 +642,14 @@
      "vsInfantry": [
       "1/2",
       "1/2",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/3",
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Laser Cannons",
@@ -739,7 +659,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -747,8 +666,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "mask--bruce-sato"
@@ -781,19 +699,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "mask--wildcat"
@@ -822,19 +735,14 @@
      "vsInfantry": [
       "1/2",
       "1/2",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/3",
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Saber Saw Blades",
@@ -844,16 +752,14 @@
      "vsInfantry": [
       "2/2",
       "2/2",
-      "1/2",
-      "1/1"
+      "1/2"
      ],
      "vsVehicle": [
       "1/2",
       "1/2",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "mask--buddie-hawks"
@@ -886,19 +792,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "venom--stinger"
@@ -929,19 +830,14 @@
      "vsInfantry": [
       "1/2",
       "1/2",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/3",
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Retractable Wheel Guns",
@@ -951,7 +847,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -959,8 +854,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "venom--bruno-sheppard"
@@ -993,19 +887,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "venom--vampire"
@@ -1036,17 +925,14 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
       "1/2",
       "1/1",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Dreadwing Detonators",
@@ -1056,19 +942,14 @@
      "vsInfantry": [
       "1/2",
       "1/2",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/3",
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "venom--floyd-malloy"
@@ -1101,19 +982,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "venom--piranha"
@@ -1144,7 +1020,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -1152,8 +1027,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Hidden Ground Torpedoes",
@@ -1163,19 +1037,14 @@
      "vsInfantry": [
       "1/2",
       "1/2",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/3",
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "venom--sly-rax"
@@ -1208,19 +1077,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "venom--manta"
@@ -1251,19 +1115,14 @@
      "vsInfantry": [
       "1/2",
       "1/2",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/3",
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Grill Cannons",
@@ -1273,7 +1132,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -1281,8 +1139,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "venom--vanessa-warfield"
@@ -1314,19 +1171,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "venom--buzzard"
@@ -1357,17 +1209,14 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
       "1/2",
       "1/1",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Slicer Cannons",
@@ -1377,17 +1226,14 @@
      "vsInfantry": [
       "2/2",
       "2/2",
-      "1/2",
-      "1/1"
+      "1/2"
      ],
      "vsVehicle": [
       "1/2",
       "1/2",
-      "1/2",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "venom--maximus-mayhem"
@@ -1419,19 +1265,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "venom--outlaw"
@@ -1462,19 +1303,14 @@
      "vsInfantry": [
       "B/2",
       "B/2",
-      "B/1",
       "B/1"
      ],
      "vsVehicle": [
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Grappling Hook",
@@ -1484,7 +1320,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -1492,8 +1327,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "venom--nash-gorey"
@@ -1525,19 +1359,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "venom--iguana"
@@ -1569,17 +1398,14 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
       "1/2",
       "1/1",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Circular Saw Blade",
@@ -1589,16 +1415,14 @@
      "vsInfantry": [
       "2/2",
       "2/2",
-      "1/2",
-      "1/1"
+      "1/2"
      ],
      "vsVehicle": [
       "1/2",
       "1/2",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "venom--lester-sludge"
@@ -1629,7 +1453,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -1637,8 +1460,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Gale Force Wind Howitzer",
@@ -1648,19 +1470,14 @@
      "vsInfantry": [
       "1/2",
       "1/2",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/3",
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ]
   },
@@ -1691,19 +1508,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "mask--firefly"
@@ -1734,17 +1546,14 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
       "1/2",
       "1/1",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Prism Beam Launchers",
@@ -1754,7 +1563,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -1762,8 +1570,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "mask--julio-lopez"
@@ -1795,19 +1602,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "mask--raven"
@@ -1839,17 +1641,14 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
       "1/2",
       "1/1",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Immobilizer Discs",
@@ -1859,7 +1658,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -1867,8 +1665,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "mask--calhoun-burns"
@@ -1900,19 +1697,14 @@
      "vsInfantry": [
       "1/1",
       "1/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
-      "1/2",
-      "1/1",
-      "1/1",
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "vehicle": "mask--condor"
@@ -1943,17 +1735,14 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/2",
       "1/2",
       "1/1",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ],
    "pilot": "mask--brad-turner"
@@ -1982,19 +1771,14 @@
      "vsInfantry": [
       "1/2",
       "1/2",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
       "1/3",
       "1/3",
-      "1/3",
       "1/2",
-      "1/2",
-      "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     },
     {
      "name": "Sand Blasting Cannons",
@@ -2004,7 +1788,6 @@
      "vsInfantry": [
       "2/1",
       "2/1",
-      "1/1",
       "1/1"
      ],
      "vsVehicle": [
@@ -2012,8 +1795,7 @@
       "1/1",
       "1/1",
       "1/1"
-     ],
-     "vsAircraft": []
+     ]
     }
    ]
   }
