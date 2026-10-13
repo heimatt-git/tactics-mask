@@ -11,7 +11,52 @@ export const CARD_FORMATS = { square: { w: 1000, mm: [80, 80] }, wide: { w: 1500
 const FONT_NAME = "'Saira Stencil One', Oswald, 'DejaVu Sans Condensed', Impact, sans-serif";
 // Police étroite et grasse (Oswald sur le site ; équivalents étroits en secours)
 const FONT = "Oswald, 'Roboto Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', 'Liberation Sans Narrow', Impact, sans-serif";
-const INK = '#231f1a', PAPER = '#f1e6c8', CREAM = '#f6ecd2', RED = '#b3261e', BROWN = '#7a4a32';
+const DEFAULT_PAL = { ink: '#231f1a', paper: '#f1e6c8', cream: '#f6ecd2', red: '#b3261e', brown: '#7a4a32' };
+// Variables de la carte en cours de dessin (réglées par camp au début de generatedCardSVG ; le dessin est synchrone)
+let INK = DEFAULT_PAL.ink, PAPER = DEFAULT_PAL.paper, CREAM = DEFAULT_PAL.cream, RED = DEFAULT_PAL.red, BROWN = DEFAULT_PAL.brown;
+let NAMEFONT = FONT_NAME, NAMEW = 400;
+
+// ---- Identité visuelle par camp (dessins et couleurs originaux : aucun logo ni illustration officielle)
+// M.A.S.K. : ordre et lumière : lignes droites, blasons carrés, jaune / rouge / bleu clair.
+// V.E.N.O.M. : intimidation : angles coupés, dents de serpent, noir / violet / vert acide.
+const THEMES = {
+  MASK: {
+    shape: 'square', paper: ['#fcf6e0', '#f6ebc8', '#e8d9a8'], panel: '#fffdf6', cream: '#fff6d6', ink: '#1b2230',
+    band: '#f2b705', bandInk: '#1b2230', stripes: ['#c8312b', '#5aa9d6'], accent: '#c8312b', accent2: '#245a8c', rowTint: '#5aa9d6',
+    nameFill: '#f2b705', nameInk: '#1b2230', subInk: '#1b2230', nameStroke: '#1b2230', nameInner: '#1b2230',
+    font: "'Russo One', 'Saira Stencil One', Oswald, Impact, sans-serif", fontW: 400, edge: 'straight', label: 'M.A.S.K.', emblem: 'shield',
+  },
+  VENOM: {
+    shape: 'cut', paper: ['#f0ebf6', '#e1d9ed', '#cbbfdc'], panel: '#f8f6fb', cream: '#efe9f8', ink: '#14121c',
+    band: '#14121c', bandInk: '#e9f7c4', stripes: ['#6a2fa0', '#9be11a'], accent: '#6a2fa0', accent2: '#4b2a86', rowTint: '#6a2fa0',
+    nameFill: '#14121c', nameInk: '#f2eeff', subInk: '#9be11a', nameStroke: '#6a2fa0', nameInner: '#9be11a',
+    font: "'Chakra Petch', 'Saira Stencil One', Oswald, Impact, sans-serif", fontW: 700, edge: 'fangs', label: 'V.E.N.O.M.', emblem: 'fang',
+  },
+};
+// Emblèmes (dessinés pour ce site, dans une boîte de 48 × 48)
+function emblem(kind, x, y, size, th) {
+  const g = (inner) => `<g transform="translate(${x} ${y}) scale(${size / 48})" stroke-linejoin="round" stroke-linecap="round">${inner}</g>`;
+  if (kind === 'shield') return g(`<path d="M24 3L43 9V24C43 35 34 42 24 46C14 42 5 35 5 24V9Z" fill="${th.ink}" stroke="${th.accent}" stroke-width="3"/><path d="M12 28L24 13L36 28V33L24 20L12 33Z" fill="${th.band}"/><circle cx="24" cy="35" r="3.6" fill="${th.stripes[1]}"/>`);
+  return g(`<path d="M24 2L43 12V34L24 46L5 34V12Z" fill="${th.accent}" stroke="${th.stripes[1]}" stroke-width="2.6"/><path d="M31 13C15 12 14 23 24 25C34 27 33 37 17 36" fill="none" stroke="${th.stripes[1]}" stroke-width="5.4"/><path d="M31 13L35 20L28 17Z" fill="${th.stripes[1]}"/>`);
+}
+// Bandeau du haut (top = true) ou du bas : bord droit à rayures (M.A.S.K.) ou dents de serpent (V.E.N.O.M.)
+function themedBand(th, top, W, H, edgeY, bandH) {
+  const o = [];
+  const y0 = top ? 0 : edgeY;
+  if (th.edge === 'fangs') {
+    const tooth = 30, depth = 16;
+    let d = top ? `M0 0H${W}V${edgeY - depth}` : `M0 ${H}H${W}V${edgeY + depth}`;
+    for (let x = W; x > 0; x -= tooth) d += top ? `L${x} ${edgeY - depth}L${x - tooth / 2} ${edgeY}L${Math.max(0, x - tooth)} ${edgeY - depth}` : `L${x} ${edgeY + depth}L${x - tooth / 2} ${edgeY}L${Math.max(0, x - tooth)} ${edgeY + depth}`;
+    o.push(`<path d="${d}Z" fill="${th.band}"/>`);
+    const ly = top ? edgeY - depth - 6 : H - 9;      // en haut : au-dessus des dents ; en bas : tout au bord de la carte
+    o.push(`<rect x="0" y="${ly}" width="${W}" height="3" fill="${th.stripes[1]}"/><rect x="0" y="${ly - 5}" width="${W}" height="4" fill="${th.stripes[0]}"/>`);
+  } else {
+    o.push(`<rect x="0" y="${y0}" width="${W}" height="${bandH}" fill="${th.band}"/>`);
+    const sy = top ? edgeY - 10 : edgeY + 4;
+    o.push(`<rect x="0" y="${sy}" width="${W}" height="5" fill="${th.stripes[0]}"/><rect x="0" y="${top ? sy + 7 : sy - 5}" width="${W}" height="3" fill="${th.stripes[1]}"/>`);
+  }
+  return o.join('');
+}
 // Les faces de dé sont des caractères réservés (largeur d'un cadratin) ; le dessin est posé dessus ensuite
 const DICE = { dice_block: '\uE000', dice_sight: '\uE001', dice_shield: '\uE002' };
 const DICE_RE = /[\uE000-\uE002]/g;
@@ -109,7 +154,17 @@ export function generatedCardSVG(u, D, { cost, photo, focus = null, format = 'sq
   const W = wide ? CARD_FORMATS.wide.w : CARD_FORMATS.square.w;
   const id = `gc${++uid}`;
   const bloc = D.blocsById.get(u.bloc);
-  const color = bloc?.color || '#6c7347';
+  const th = THEMES[u.bloc] || null;
+  if (th) { INK = th.ink; PAPER = th.paper[1]; CREAM = th.cream; RED = th.accent; BROWN = th.accent2; NAMEFONT = th.font; NAMEW = th.fontW; }
+  else { INK = DEFAULT_PAL.ink; PAPER = DEFAULT_PAL.paper; CREAM = DEFAULT_PAL.cream; RED = DEFAULT_PAL.red; BROWN = DEFAULT_PAL.brown; NAMEFONT = FONT_NAME; NAMEW = 400; }
+  const color = th ? th.band : (bloc?.color || '#6c7347');
+  const PANEL = th ? th.panel : '#fffdf7';
+  // Forme des cadres : arrondie (défaut), carrée (M.A.S.K.) ou à angles coupés (V.E.N.O.M.)
+  const box = (x, y, w, h, r, attrs = '') => {
+    if (th?.shape === 'cut') { const c = Math.min(r * .7, 34); return `<path d="M${x + c} ${y}H${x + w}V${y + h - c}L${x + w - c} ${y + h}H${x}V${y + c}Z" ${attrs}/>`; }
+    return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${th?.shape === 'square' ? Math.min(r, 9) : r}" ${attrs}/>`;
+  };
+  const BH = th ? 54 : 34;                              // hauteur du bandeau du haut
   const ws = u.weapons || [];
   const r = rng(u.id || u.name);
   const out = [];
@@ -142,32 +197,40 @@ export function generatedCardSVG(u, D, { cost, photo, focus = null, format = 'sq
 
   out.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" class="gcard-svg" role="img" aria-label="${xe(u.name)}">`);
   out.push(`<defs>
-    <clipPath id="${id}-card"><rect width="${W}" height="${H}" rx="26"/></clipPath>
-    <clipPath id="${id}-ph"><rect x="${PX}" y="${PY}" width="${PW}" height="${PH}" rx="34"/></clipPath>
-    <radialGradient id="${id}-paper" cx="30%" cy="35%" r="85%"><stop offset="0" stop-color="#f7efd9"/><stop offset=".65" stop-color="${PAPER}"/><stop offset="1" stop-color="#dcc79a"/></radialGradient>
+    <clipPath id="${id}-card">${box(0, 0, W, H, 26)}</clipPath>
+    <clipPath id="${id}-ph">${box(PX, PY, PW, PH, 34)}</clipPath>
+    <radialGradient id="${id}-paper" cx="30%" cy="35%" r="85%"><stop offset="0" stop-color="${th ? th.paper[0] : '#f7efd9'}"/><stop offset=".65" stop-color="${PAPER}"/><stop offset="1" stop-color="${th ? th.paper[2] : '#dcc79a'}"/></radialGradient>
     <linearGradient id="${id}-gen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${color}" stop-opacity=".22"/><stop offset="1" stop-color="${color}" stop-opacity=".55"/></linearGradient>
   </defs><g clip-path="url(#${id}-card)">`);
 
   // ---- Fond parchemin, bandeaux déchirés couleur du bloc
   out.push(`<rect width="${W}" height="${H}" fill="url(#${id}-paper)"/>`);
   for (let i = 0; i < 7; i++) out.push(`<circle cx="${(r() * W).toFixed(0)}" cy="${(r() * H).toFixed(0)}" r="${(40 + r() * 120).toFixed(0)}" fill="#b89a60" opacity="${(.04 + r() * .05).toFixed(2)}"/>`);
-  out.push(`<path d="M0 0H${W}V34${tornEdge(34, 12, r, true, W).replace(/^L/, 'L')}L0 34Z" fill="${color}"/>`);
-  out.push(`<path d="M0 ${H}H${W}V${footY + 8}${tornEdge(footY + 8, 14, r, true, W)}L0 ${footY + 8}Z" fill="${color}"/>`);
+  if (th) {
+    out.push(themedBand(th, true, W, H, BH, BH));
+    out.push(themedBand(th, false, W, H, footY + 8, H - footY - 8));
+    // Nom du camp et emblème dans le bandeau du haut
+    out.push(`<text x="30" y="25" font-family="${xe(th.font)}" font-weight="${th.fontW}" font-size="25" letter-spacing="5" fill="${th.bandInk}">${xe(th.label)}</text>`);
+    out.push(emblem(th.emblem, W - 80, 3, 46, th));
+  } else {
+    out.push(`<path d="M0 0H${W}V34${tornEdge(34, 12, r, true, W).replace(/^L/, 'L')}L0 34Z" fill="${color}"/>`);
+    out.push(`<path d="M0 ${H}H${W}V${footY + 8}${tornEdge(footY + 8, 14, r, true, W)}L0 ${footY + 8}Z" fill="${color}"/>`);
+  }
 
   // ---- Photo (communauté) ou image générique
-  out.push(`<rect x="${PX}" y="${PY}" width="${PW}" height="${PH}" rx="34" fill="${PAPER}"/>`);
+  out.push(`${box(PX, PY, PW, PH, 34, `fill="${PAPER}"`)}`);
   if (photo && focus?.ar) {
     // Cadrage choisi : point de visée + zoom (gardés quel que soit le format de la zone photo)
     const pl = photoPlacement({ x: PX, y: PY, w: PW, h: PH }, focus);
     out.push(`<image href="${xe(photo)}" x="${pl.x.toFixed(1)}" y="${pl.y.toFixed(1)}" width="${pl.w.toFixed(1)}" height="${pl.h.toFixed(1)}" preserveAspectRatio="none" clip-path="url(#${id}-ph)"/>`);
   } else if (photo) out.push(`<image href="${xe(photo)}" x="${PX}" y="${PY}" width="${PW}" height="${PH}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id}-ph)"/>`);
   else {
-    out.push(`<rect x="${PX}" y="${PY}" width="${PW}" height="${PH}" rx="34" fill="url(#${id}-gen)"/>`);
+    out.push(`${box(PX, PY, PW, PH, 34, `fill="url(#${id}-gen)"`)}`);
     for (let i = 0; i < 9; i++) out.push(`<rect x="${PX}" y="${PY + 30 + i * 44}" width="${PW}" height="2" fill="${color}" opacity=".12" clip-path="url(#${id}-ph)"/>`);
     const isz = Math.min(220, PH * .62);
     out.push(icon(TYPE_ICON[u.type] || P.inf, PX + PW / 2 - isz / 2, PY + PH / 2 - isz * .59, isz, color, 'opacity=".55"'));
   }
-  out.push(`<rect x="${PX}" y="${PY}" width="${PW}" height="${PH}" rx="34" fill="none" stroke="${INK}" stroke-width="4"/>`);
+  out.push(`${box(PX, PY, PW, PH, 34, `fill="none" stroke="${INK}" stroke-width="4"`)}`);
 
   // ---- Crédit de la photo (juste au-dessus du cartouche du nom, qui recouvre le bas de la photo)
   if (credit) {
@@ -190,18 +253,18 @@ export function generatedCardSVG(u, D, { cost, photo, focus = null, format = 'sq
 
   // ---- Cartouche du nom (pas d'emblème de faction : aucun logo officiel sur la carte)
   const CX = 60, CY = 432 + T, CW = 440, CH = 122;
-  out.push(`<rect x="${CX}" y="${CY}" width="${CW}" height="${CH}" rx="24" fill="#fffdf7" stroke="${INK}" stroke-width="4"/>`);
-  out.push(`<rect x="${CX + 7}" y="${CY + 7}" width="${CW - 14}" height="${CH - 14}" rx="17" fill="none" stroke="${INK}" stroke-width="1.5" opacity=".6"/>`);
+  out.push(`${box(CX, CY, CW, CH, 24, `fill="${th ? th.nameFill : '#fffdf7'}" stroke="${th ? th.nameStroke : INK}" stroke-width="4"`)}`);
+  out.push(`${box(CX + 7, CY + 7, CW - 14, CH - 14, 17, `fill="none" stroke="${th ? th.nameInner : INK}" stroke-width="1.5" opacity=".6"`)}`);
   const nm = nameLines(u.name.toUpperCase(), CW - 40, u.subtitle ? 2 : 3);
   let subL = u.subtitle ? subtitleLines(u.subtitle.toUpperCase(), CW - 40) : { lines: [], size: 0 };
-  if (nm.lines.length > 1 && subL.lines.length > 1) { const sf = fit(u.subtitle.toUpperCase(), `400 {s}px ${FONT_NAME}`, subL.size, CW - 40, 12); subL = { lines: [sf.text], size: sf.size }; }
+  if (nm.lines.length > 1 && subL.lines.length > 1) { const sf = fit(u.subtitle.toUpperCase(), `${NAMEW} {s}px ${NAMEFONT}`, subL.size, CW - 40, 12); subL = { lines: [sf.text], size: sf.size }; }
   const blockH = nm.lines.length * nm.size * .98 + subL.lines.length * (subL.size + 3);
   let ny = CY + CH / 2 - blockH / 2 - 2;
-  for (const l of nm.lines) { ny += nm.size * .98; out.push(txt(CX + CW / 2, ny - nm.size * .12, nm.size, xe(l), { w: 400, font: FONT_NAME })); }
-  subL.lines.forEach((l) => { ny += subL.size + 3; out.push(txt(CX + CW / 2, ny, subL.size, xe(l), { w: 400, font: FONT_NAME })); });
+  for (const l of nm.lines) { ny += nm.size * .98; out.push(txt(CX + CW / 2, ny - nm.size * .12, nm.size, xe(l), { w: NAMEW, font: NAMEFONT, fill: th ? th.nameInk : INK })); }
+  subL.lines.forEach((l) => { ny += subL.size + 3; out.push(txt(CX + CW / 2, ny, subL.size, xe(l), { w: NAMEW, font: NAMEFONT, fill: th ? th.subInk : INK })); });
 
   // ---- Compétences : « • NOM • » centré, puis le résumé
-  out.push(`<rect x="${SX}" y="${SY}" width="${SW}" height="${SH}" rx="34" fill="#fffdf7" stroke="${INK}" stroke-width="4"/>`);
+  out.push(`${box(SX, SY, SW, SH, 34, `fill="${PANEL}" stroke="${INK}" stroke-width="4"`)}`);
   const skills = [
     ...(u.skills || []).filter((s) => !(u.customSkills || []).some((c) => c.name === s)).map((s) => ({ head: s, desc: D.skills[s] || '' })),
     ...(u.customSkills || []).map((c) => ({ head: c.name, desc: skillDesc(c) })),
@@ -235,7 +298,7 @@ export function generatedCardSVG(u, D, { cost, photo, focus = null, format = 'sq
   ws.forEach((w, i) => {
     const ry = TY + HEAD + i * ROW;
     if (i % 2 === 0) out.push(`<rect x="${x0}" y="${ry}" width="${x1 - x0}" height="${ROW}" fill="#fffaf0" opacity=".7"/>`);
-    else out.push(`<rect x="${x0}" y="${ry}" width="${x1 - x0}" height="${ROW}" fill="${color}" opacity=".10"/>`);
+    else out.push(`<rect x="${x0}" y="${ry}" width="${x1 - x0}" height="${ROW}" fill="${th ? th.rowTint : color}" opacity=".12"/>`);
     const cy = ry + ROW / 2;
     out.push(`<circle cx="${x0 + 24}" cy="${cy}" r="17" fill="${RED}" stroke="${INK}" stroke-width="2"/>`);
     out.push(txt(x0 + 24, cy + 8, 22, 'ABCDEFGH'[i] || '', { fill: CREAM }));
@@ -263,7 +326,7 @@ export function generatedCardSVG(u, D, { cost, photo, focus = null, format = 'sq
   const hp = Number.isInteger(u.health) ? u.health : parseInt(u.health, 10);
   if (hp > 0) {
     const pw = String(u.health).length > 1 ? 150 : 120;
-    out.push(`<rect x="${fx}" y="${fy - 32}" width="${pw}" height="64" rx="32" fill="${CREAM}" stroke="${INK}" stroke-width="3"/>`);
+    out.push(`${box(fx, fy - 32, pw, 64, 32, `fill="${CREAM}" stroke="${INK}" stroke-width="3"`)}`);
     out.push(icon(P.cross, fx + 12, fy - 20, 40, RED));
     out.push(txt(fx + 58 + (pw - 58) / 2 - 4, fy + 19, 54, xe(u.health)));
     fx += pw + 14;
@@ -274,9 +337,9 @@ export function generatedCardSVG(u, D, { cost, photo, focus = null, format = 'sq
   const mx = W - 30 - 380;
   const hasMove = [u.move, u.march, u.armor].some((v) => v != null && v !== '');
   const num = (cx, v) => { const n = fit(String(v ?? '-'), f(700, '{s}'), 54, 58, 30); return txt(cx, fy + 19, n.size, xe(n.text)); };
-  if (u.type === 'hero') out.push(txt((fx + mx) / 2, fy + 12, 34, `* ${xe(t('Héros'))}`, { fill: CREAM }));
+  if (u.type === 'hero') out.push(txt((fx + mx) / 2, fy + 12, 34, `* ${xe(t('Héros'))}`, { fill: th ? th.bandInk : CREAM }));
   if (hasMove) {
-  out.push(`<rect x="${mx}" y="${fy - 32}" width="380" height="64" rx="32" fill="${CREAM}" stroke="${INK}" stroke-width="3"/>`);
+  out.push(`${box(mx, fy - 32, 380, 64, 32, `fill="${CREAM}" stroke="${INK}" stroke-width="3"`)}`);
   out.push(icon(P.arrow, mx + 16, fy - 16, 32, BROWN));
   out.push(num(mx + 84, u.move));
   out.push(icon(P.arrow, mx + 122, fy - 16, 32, BROWN) + icon(P.arrow, mx + 140, fy - 16, 32, BROWN));
@@ -330,27 +393,27 @@ function weaponLabel2(w, x, y, width) {
 
 // Nom de l'unité : une ligne, ou deux (voire trois) si le nom est long
 function nameLines(text, width, maxLines) {
-  const one = fit(text, `400 {s}px ${FONT_NAME}`, 58, width, 32);
-  if (measure(one.text, `400 ${one.size}px ${FONT_NAME}`) <= width && !one.text.endsWith('…')) return { lines: [one.text], size: one.size };
+  const one = fit(text, `${NAMEW} {s}px ${NAMEFONT}`, 58, width, 32);
+  if (measure(one.text, `${NAMEW} ${one.size}px ${NAMEFONT}`) <= width && !one.text.endsWith('…')) return { lines: [one.text], size: one.size };
   for (let n = 2; n <= maxLines; n++) {
     for (let s = 40; s >= (n === maxLines ? 18 : 28); s -= 2) {
-      const lines = wrap(text, `400 ${s}px ${FONT_NAME}`, width);
-      if (lines.length <= n && lines.every((l) => measure(l, `400 ${s}px ${FONT_NAME}`) <= width)) return { lines, size: Math.min(s, n === 3 ? 30 : 40) };
+      const lines = wrap(text, `${NAMEW} ${s}px ${NAMEFONT}`, width);
+      if (lines.length <= n && lines.every((l) => measure(l, `${NAMEW} ${s}px ${NAMEFONT}`) <= width)) return { lines, size: Math.min(s, n === 3 ? 30 : 40) };
     }
   }
-  const f2 = fit(text, `400 {s}px ${FONT_NAME}`, 20, width, 14);
+  const f2 = fit(text, `${NAMEW} {s}px ${NAMEFONT}`, 20, width, 14);
   return { lines: [f2.text], size: f2.size };
 }
 
 // Sous-titre du cartouche : 1 ou 2 lignes, taille réduite si besoin
 function subtitleLines(text, width) {
   for (let s = 21; s >= 12; s--) {
-    const lines = wrap(text, `400 ${s}px ${FONT_NAME}`, width);
+    const lines = wrap(text, `${NAMEW} ${s}px ${NAMEFONT}`, width);
     if (lines.length <= 2) return { lines, size: s };
   }
   const s = 12;
-  const lines = wrap(text, `400 ${s}px ${FONT_NAME}`, width).slice(0, 2);
-  lines[1] = fit(lines[1] + '…', `400 {s}px ${FONT_NAME}`, s, width, s).text;
+  const lines = wrap(text, `${NAMEW} ${s}px ${NAMEFONT}`, width).slice(0, 2);
+  lines[1] = fit(lines[1] + '…', `${NAMEW} {s}px ${NAMEFONT}`, s, width, s).text;
   return { lines, size: s };
 }
 
@@ -403,7 +466,7 @@ function weaponLabel(w, x, y, width) {
 // Les polices de la carte doivent être chargées avant de mesurer les textes
 export function cardFontsReady() {
   if (!document.fonts?.load) return Promise.resolve();
-  return Promise.all(['400 20px "Saira Stencil One"', '400 20px Oswald', '700 20px Oswald'].map((f) => document.fonts.load(f))).catch(() => {});
+  return Promise.all(['400 20px "Saira Stencil One"', '400 20px "Russo One"', '700 20px "Chakra Petch"', '400 20px Oswald', '700 20px Oswald'].map((f) => document.fonts.load(f))).catch(() => {});
 }
 
 // ---------------------------------------------------------------- Export PNG
