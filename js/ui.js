@@ -167,3 +167,39 @@ export async function mountFeedback() {
     anchor.before(a);
   } catch { /* hors ligne ou fichier absent : pas de bouton */ }
 }
+
+
+// ---------------------------------------------------------------- Camp visuel (M.A.S.K., V.E.N.O.M. ou mélange)
+// Le choix change les couleurs, les formes et les titres du site (voir css/style.css, « data-camp »).
+const CAMPS = ['mix', 'mask', 'venom'];
+const CAMP_NAME = { mix: 'Mixte', mask: 'M.A.S.K.', venom: 'V.E.N.O.M.' };
+// Emblèmes dessinés pour ce site (aucun logo officiel)
+const EMB_MASK = '<svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true"><path d="M24 3L43 9V24C43 35 34 42 24 46C14 42 5 35 5 24V9Z" fill="#1b2230" stroke="#c8312b" stroke-width="3" stroke-linejoin="round"/><path d="M12 28L24 13L36 28V33L24 20L12 33Z" fill="#f2b705"/><circle cx="24" cy="35" r="3.6" fill="#5aa9d6"/></svg>';
+const EMB_VENOM = '<svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true"><path d="M24 2L43 12V34L24 46L5 34V12Z" fill="#6a2fa0" stroke="#9be11a" stroke-width="2.6" stroke-linejoin="round"/><path d="M31 13C15 12 14 23 24 25C34 27 33 37 17 36" fill="none" stroke="#9be11a" stroke-width="5.4" stroke-linecap="round"/><path d="M31 13L35 20L28 17Z" fill="#9be11a"/></svg>';
+const campEmb = (c) => (c === 'mask' ? EMB_MASK : c === 'venom' ? EMB_VENOM : EMB_MASK + EMB_VENOM);
+export function initCamp() {
+  const c = store.get('mask.camp', 'mix');
+  document.documentElement.dataset.camp = CAMPS.includes(c) ? c : 'mix';
+}
+// Bouton « camp » dans la barre du haut, juste avant « Thème » : un clic passe au camp suivant
+export function mountCampPicker() {
+  const nav = document.querySelector('.topnav');
+  const anchor = nav?.querySelector('#theme-btn');
+  if (!nav || !anchor || nav.querySelector('#camp-btn')) return;
+  const b = document.createElement('button');
+  b.id = 'camp-btn'; b.type = 'button';
+  const paint = () => {
+    const c = document.documentElement.dataset.camp || 'mix';
+    b.innerHTML = `<span class="camp-emb">${campEmb(c)}</span><span class="camp-name">${esc(t(CAMP_NAME[c]))}</span>`;
+    b.title = t('Changer de camp') + ' : ' + t(CAMP_NAME[CAMPS[(CAMPS.indexOf(c) + 1) % CAMPS.length]]);
+    b.setAttribute('aria-label', b.title);
+  };
+  b.addEventListener('click', () => {
+    const c = CAMPS[(CAMPS.indexOf(document.documentElement.dataset.camp || 'mix') + 1) % CAMPS.length];
+    document.documentElement.dataset.camp = c;
+    store.set('mask.camp', c);
+    paint();
+  });
+  paint();
+  anchor.before(b);
+}
