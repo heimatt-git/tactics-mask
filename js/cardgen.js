@@ -74,8 +74,8 @@ const P = {
   cross: 'M8.5 2h7v6.5H22v7h-6.5V22h-7v-6.5H2v-7h6.5z',
   arrow: 'M2 9h11V3.5L22.5 12 13 20.5V15H2z',
 };
-const TYPE_ICON = { infantry: P.inf, hero: P.hero, vehicle: P.veh, aircraft: P.air, token: P.inf };
-const ARMOR_ICON = { infantry: P.inf, hero: P.inf, vehicle: P.veh, aircraft: P.air, token: P.inf };
+const TYPE_ICON = { infantry: P.inf, hero: P.hero, vehicle: P.veh, token: P.inf };
+const ARMOR_ICON = { infantry: P.inf, hero: P.inf, vehicle: P.veh, token: P.inf };
 const icon = (d, x, y, size, fill, extra = '') => `<path d="${d}" fill="${fill}" ${extra} transform="translate(${x} ${y}) scale(${size / 24})"/>`;
 
 // Bord « déchiré » des bandeaux (toujours le même pour une unité donnée)
@@ -191,7 +191,7 @@ export function generatedCardSVG(u, D, { cost, photo, focus = null, format = 'sq
   const TY = 574 + T;                                   // tableau d'armes
   const x0 = 22, x1 = W - 22;
   const NAME_W = wide ? 430 : 300, RANGE_W = wide ? 76 : 64, NAME_X = x0, RANGE_X = x0 + NAME_W, VAL_X = RANGE_X + RANGE_W;
-  const VAL_W = (x1 - VAL_X) / 14;
+  const VAL_W = (x1 - VAL_X) / 7;
   const footY = TY + HEAD + nW * ROW + 26;
   const H = footY + 116;
 
@@ -288,7 +288,7 @@ export function generatedCardSVG(u, D, { cost, photo, focus = null, format = 'sq
   out.push(gameLogo(x0, TY + 8, NAME_W, HEAD - 16));
   const rg = fit(t('PORTÉE'), f(700, '{s}'), 15, RANGE_W - 10, 9);
   out.push(txt(RANGE_X + RANGE_W / 2, TY + HEAD - 14, rg.size, xe(rg.text)));
-  const groups = [[P.inf, 0, 4], [P.veh, 4, 7], [P.air, 11, 3]];
+  const groups = [[P.inf, 0, 3], [P.veh, 3, 4]];
   const rowsH = Math.max(1, ws.length) * ROW;
   for (const [d, start, n] of groups) {
     const gx = VAL_X + start * VAL_W;
@@ -304,7 +304,7 @@ export function generatedCardSVG(u, D, { cost, photo, focus = null, format = 'sq
     out.push(txt(x0 + 24, cy + 8, 22, 'ABCDEFGH'[i] || '', { fill: CREAM }));
     out.push(weaponLabel(w, x0 + 50, cy + 9, NAME_W - 56));
     out.push(txt(RANGE_X + RANGE_W / 2, cy + 10, 28, xe(w.range ?? '-')));
-    const vals = [...pad(w.vsInfantry, 4), ...pad(w.vsVehicle, 7), ...pad(w.vsAircraft, 3)];
+    const vals = [...pad(w.vsInfantry, 3), ...pad(w.vsVehicle, 4)];
     vals.forEach((v, k) => {
       const sp = attackParts(v);
       if (sp) { out.push(attackCell(sp, VAL_X + (k + .5) * VAL_W, cy, VAL_W - 6, txt)); return; }
@@ -317,8 +317,8 @@ export function generatedCardSVG(u, D, { cost, photo, focus = null, format = 'sq
   out.push(`<rect x="${x0}" y="${TY + HEAD - 2}" width="${x1 - x0}" height="3" fill="${INK}"/>`);
   out.push(`<rect x="${x0}" y="${TY + HEAD + rowsH}" width="${x1 - x0}" height="3" fill="${INK}"/>`);
   // Lignes légères entre chaque niveau de portée
-  for (let k = 1; k < 14; k++) if (k !== 4 && k !== 11) out.push(`<rect x="${VAL_X + k * VAL_W - .75}" y="${TY + HEAD - 40}" width="1.5" height="${rowsH + 40}" fill="${INK}" opacity=".18"/>`);
-  for (const gx of [RANGE_X, VAL_X, VAL_X + 4 * VAL_W, VAL_X + 11 * VAL_W]) out.push(`<rect x="${gx - 1}" y="${TY + 6}" width="3" height="${HEAD + rowsH - 6}" fill="${INK}" opacity=".75"/>`);
+  for (let k = 1; k < 7; k++) if (k !== 3) out.push(`<rect x="${VAL_X + k * VAL_W - .75}" y="${TY + HEAD - 40}" width="1.5" height="${rowsH + 40}" fill="${INK}" opacity=".18"/>`);
+  for (const gx of [RANGE_X, VAL_X, VAL_X + 3 * VAL_W]) out.push(`<rect x="${gx - 1}" y="${TY + 6}" width="3" height="${HEAD + rowsH - 6}" fill="${INK}" opacity=".75"/>`);
 
   // ---- Pied de carte : santé (croix puis chiffre), cases de dégâts « + », héros, déplacement, marche, armure
   const fy = footY + 66;
