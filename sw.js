@@ -1,9 +1,9 @@
 // Service worker du TACTICS: M.A.S.K. Builder : permet l'installation et l'ouverture sans connexion.
 // Principe prudent : on essaie TOUJOURS le réseau d'abord (le site reste à jour), le cache ne sert que si le réseau échoue.
-const CACHE = 'mask-v1';
+const CACHE = 'mask-v2';
 const MAX_ENTRIES = 500;
 const NET_TIMEOUT = 5000; // réseau trop lent : on prend la copie en cache
-const PAGES = ['index.html', 'shot.html', 'atelier.html', 'aide.html'];
+const PAGES = ['index.html', 'atelier.html', 'aide.html'];
 const STATIC = [
   './', 'manifest.webmanifest',
   'data/units.json', 'data/blocs.json', 'data/skills.json', 'data/skills.fr.json', 'data/photos.json',
