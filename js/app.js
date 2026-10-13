@@ -13,7 +13,7 @@ import { initImages, imagesAvailable, imageURL, hasImage, imageCount, saveImage,
 
 const LS_KEY = 'mask.lists';
 const LIMITS = [25, 50, 100, 150, 200];
-const TYPE_ORDER = ['hero', 'infantry', 'vehicle', 'aircraft', 'token'];
+const TYPE_ORDER = ['hero', 'infantry', 'vehicle', 'token'];
 const NAME_COLLATOR = new Intl.Collator(undefined, { sensitivity: 'base', numeric: true });
 // Ordre d'affichage : type (héros, infanterie, véhicules…) puis ordre alphabétique du nom.
 // Un héros rattaché ou un véhicule transporté suit son unité d'accueil.
@@ -582,10 +582,10 @@ function entryRow(e, level = 0) {
   // Rattachement d'un héros
   if (isJoiner(u)) {
     const targets = L.entries.filter((x) => x.k !== e.k).map((x) => ({ x, t: D.unitsById.get(x.u) })).filter(({ t: tu }) => tu && (
-      ((tu.type === 'infantry' || (tu.type === 'hero' && isCommissar(u))) && tu.armor === u.armor) || ((tu.type === 'vehicle' || tu.type === 'aircraft') && canPilot(u, tu))));
+      ((tu.type === 'infantry' || (tu.type === 'hero' && isCommissar(u))) && tu.armor === u.armor) || (tu.type === 'vehicle' && canPilot(u, tu))));
     ctrls += `<select data-join="${e.k}" aria-label="${esc(t('Rattacher {n}', { n: u.name }))}">
       <option value="">${t('Seul')}</option>
-      ${targets.map(({ x, t: tu }) => `<option value="${x.k}" ${e.join === x.k ? 'selected' : ''}>${tu.type === 'vehicle' || tu.type === 'aircraft' ? t('Pilote') : t('Rejoint')} : ${esc(tu.name)}</option>`).join('')}
+      ${targets.map(({ x, t: tu }) => `<option value="${x.k}" ${e.join === x.k ? 'selected' : ''}>${tu.type === 'vehicle' ? t('Pilote') : t('Rejoint')} : ${esc(tu.name)}</option>`).join('')}
     </select>`;
   }
   // Transport d'un véhicule Airmobile / Air Assault par un hélicoptère Airlifter
@@ -724,7 +724,7 @@ function listText(A) {
     if (e.cap) bits.push(t('capturé'));
     if (e.merc) bits.push(t('mercenaire'));
     if (u.confidential) bits.push('CONFIDENTIAL');
-    if (e.join) { const tu = D.unitsById.get(L.entries.find((x) => x.k === e.join)?.u); if (tu) bits.push((isCarriable(u) && !isJoiner(u) ? t('transporté par') : tu.type === 'vehicle' || tu.type === 'aircraft' ? t('pilote') : t('rejoint')) + ' ' + tu.name); }
+    if (e.join) { const tu = D.unitsById.get(L.entries.find((x) => x.k === e.join)?.u); if (tu) bits.push((isCarriable(u) && !isJoiner(u) ? t('transporté par') : tu.type === 'vehicle' ? t('pilote') : t('rejoint')) + ' ' + tu.name); }
     return `${ind}- ${u.name} (${entryCost(e, D)})${bits.length ? ' [' + bits.join(', ') + ']' : ''}`;
   };
   const out = [`${L.name}`, ...(L.confidential ? [t('CONFIDENTIAL : contient des créations de la communauté, non officielles')] : []), `${blocName(L.bloc, D)} · ${A.counted}/${L.limit} pts${A.covered ? t(' (+{n} pts de héros en bonus)', { n: A.covered }) : ''} · ${A.kindLabel}`, ''];
@@ -801,8 +801,8 @@ function printHTML(A) {
     const ws = u.weapons || [];
     return `<div class="pu"><b>${esc(u.name)}</b> — ${entryCost(e, D)} pts · ${t('Arm')} ${esc(u.armor ?? '-')} · ${t('Santé')} ${esc(u.health ?? '-')} · ${t('Mv')} ${esc(u.move ?? '-')}/${esc(u.march ?? '-')}${e.cap ? ' · ' + t('capturé') : ''}${u.confidential ? ' · <b>CONFIDENTIAL</b>' : ''}
       ${(u.skills || []).length ? `<div><i>${u.skills.map(esc).join(', ')}</i></div>` : ''}
-      ${ws.length ? `<table><tr><th>${t('Arme')}</th><th>${t('Nb')}</th><th>${t('Portée')}</th><th>${t('Inf 1-4')}</th><th>${t('Véh 1-7')}</th><th>${t('Aéro')}</th></tr>
-      ${ws.map((w) => `<tr><td class="wn">${esc(w.name)}${(w.specials || []).length ? ' (' + w.specials.map(esc).join(', ') + ')' : ''}</td><td>${esc(w.count ?? '')}</td><td>${esc(w.range ?? '')}</td><td>${(w.vsInfantry || []).map(attackHtml).join(' ')}</td><td>${(w.vsVehicle || []).map(attackHtml).join(' ')}</td><td>${(w.vsAircraft || []).map(attackHtml).join(' ')}</td></tr>`).join('')}</table>` : ''}
+      ${ws.length ? `<table><tr><th>${t('Arme')}</th><th>${t('Nb')}</th><th>${t('Portée')}</th><th>${t('Inf 1-3')}</th><th>${t('Véh 1-4')}</th></tr>
+      ${ws.map((w) => `<tr><td class="wn">${esc(w.name)}${(w.specials || []).length ? ' (' + w.specials.map(esc).join(', ') + ')' : ''}</td><td>${esc(w.count ?? '')}</td><td>${esc(w.range ?? '')}</td><td>${(w.vsInfantry || []).map(attackHtml).join(' ')}</td><td>${(w.vsVehicle || []).map(attackHtml).join(' ')}</td></tr>`).join('')}</table>` : ''}
     </div>`;
   };
   return `<h1>${esc(L.name)}</h1>${L.confidential ? `<p><b>${esc(t('CONFIDENTIAL : contient des créations de la communauté, non officielles'))}</b></p>` : ''}<p>${esc(blocName(L.bloc, D))} · ${A.counted}/${L.limit} pts · ${esc(A.kindLabel)}</p>
