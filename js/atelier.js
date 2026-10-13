@@ -3,7 +3,7 @@
 // Rien n'est envoyé automatiquement : le projet reste dans le navigateur jusqu'à l'export.
 import { loadData, loadCustom, withCustom, typeLabel, CONF_PREFIX } from './data.js';
 import { validateCustom, UNIT_TYPES } from './validate.js';
-import { esc, uid, store, toast, openModal, unitCardHTML, brandLogo, mountCredit, mountFeedback } from './ui.js';
+import { esc, uid, store, toast, openModal, unitCardHTML, brandLogo, mountCredit, mountFeedback, initCamp, mountCampPicker } from './ui.js';
 import { shrink } from './images.js';
 import { framingHTML, mountFraming } from './framing.js';
 import { skillPickerHTML, bindSkillPickers } from './skillpicker.js';
@@ -69,6 +69,7 @@ const dataURLToBlob = (d) => fetch(d).then((r) => r.blob());
 
 // ---------------------------------------------------------------- Démarrage
 initLang();
+initCamp();
 mountCredit();
 topbar();
 init();
@@ -99,6 +100,7 @@ function topbar() {
     <button id="theme-btn" type="button">${t('Thème')}</button>
   </nav>`;
   mountFeedback();
+  mountCampPicker();
   h.querySelector('#lang-btn').addEventListener('click', () => { setLang(LANG === 'fr' ? 'en' : 'fr'); location.reload(); });
   h.querySelector('#theme-btn').addEventListener('click', () => {
     const r = document.documentElement;
