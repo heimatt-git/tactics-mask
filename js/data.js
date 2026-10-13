@@ -4,7 +4,6 @@ import { t, LANG } from './i18n.js';
 export const TYPE_LABELS = {
   infantry: 'Infanterie',
   vehicle: 'Véhicule',
-  aircraft: 'Aéronef',
   hero: 'Héros',
   token: 'Objet',
 };
@@ -104,7 +103,7 @@ export function canPilot(hero, target) {
   // Duo pilote + véhicule : la fiche du véhicule désigne son pilote (champ « pilot »), celle du pilote son véhicule (champ « vehicle »)
   if (target.pilot) return target.pilot === hero.id;
   if (hero.vehicle) return hero.vehicle === target.id;
-  if (target.type !== 'vehicle' && target.type !== 'aircraft') return false;
+  if (target.type !== 'vehicle') return false;
   const mine = customNames(hero);
   // Le véhicule réserve son pilotage à un héros précis
   const reserved = customNames(target).map((n) => n.match(/^Pilot\s*:\s*(.+)$/i)).filter(Boolean).map((m) => m[1]);
@@ -113,10 +112,9 @@ export function canPilot(hero, target) {
   const only = mine.map((n) => n.match(/^Pilot\s*:\s*(.+)$/i)).filter(Boolean).map((m) => m[1]);
   if (only.length && only.some((o) => sameName(target.name, o))) return true;
   // Pilotage limité à une faction : « Defensive Pilot (Luftwaffe) »
-  const fac = mine.map((n) => n.match(target.type === 'aircraft' ? /^(?:Ace )?Air Pilot\s*\((.+)\)$/i : /^(?:Ace |Defensive )?Pilot\s*\((.+)\)$/i)).filter(Boolean).map((m) => m[1].toLowerCase());
+  const fac = mine.map((n) => n.match(/^(?:Ace |Defensive )?Pilot\s*\((.+)\)$/i)).filter(Boolean).map((m) => m[1].toLowerCase());
   if (fac.some((f) => String(target.faction || '').toLowerCase().includes(f))) return true;
   const s = hero.skills || [];
   if (only.length) return false;
-  if (target.type === 'aircraft') return s.includes('Air Pilot') || s.includes('Ace Air Pilot');
   return s.some((x) => /^(Ace |Defensive )?Pilot$/.test(x));
 }
