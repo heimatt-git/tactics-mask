@@ -1,6 +1,6 @@
 {
  "meta": {
-  "version": "0.1.7",
+  "version": "2026.10.13",
   "source": "TACTICS: M.A.S.K. — données de fan, non officielles",
   "updated": "2026-10-13"
  },
@@ -8,7 +8,7 @@
   {
    "id": "mask--matt-trakker",
    "name": "Matt Trakker",
-   "subtitle": "Fondateur et chef de M.A.S.K.",
+   "subtitle": "Fondateur et chef de M.A.S.K..",
    "bloc": "MASK",
    "type": "hero",
    "faction": null,
