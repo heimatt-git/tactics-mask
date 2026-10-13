@@ -1,0 +1,56 @@
+{
+ "name": "TACTICS: M.A.S.K. Builder",
+ "short_name": "TACTICS: M.A.S.K.",
+ "description": "Army builder communautaire, modèle vierge.",
+ "lang": "fr",
+ "start_url": "./index.html",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#14170f",
+ "theme_color": "#1e2217",
+ "icons": [
+  {
+   "src": "img/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "img/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "img/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Shot Format",
+   "short_name": "Shot Format",
+   "url": "./shot.html",
+   "icons": [
+    {
+     "src": "img/icon-192.png",
+     "sizes": "192x192",
+     "type": "image/png"
+    }
+   ]
+  },
+  {
+   "name": "Atelier",
+   "url": "./atelier.html",
+   "icons": [
+    {
+     "src": "img/icon-192.png",
+     "sizes": "192x192",
+     "type": "image/png"
+    }
+   ]
+  }
+ ]
+}

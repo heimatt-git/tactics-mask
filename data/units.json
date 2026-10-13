@@ -1,0 +1,2021 @@
+{
+ "meta": {
+  "version": "0.1.7",
+  "source": "TACTICS: M.A.S.K. — données de fan, non officielles",
+  "updated": "2026-10-13"
+ },
+ "units": [
+  {
+   "id": "mask--matt-trakker",
+   "name": "Matt Trakker",
+   "subtitle": "Fondateur et chef de M.A.S.K.",
+   "bloc": "MASK",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Leader",
+    "Martial Arts",
+    "Spectrum Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Laser pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "mask--thunderhawk"
+  },
+  {
+   "id": "mask--thunderhawk",
+   "name": "Thunderhawk",
+   "subtitle": "Véhicule de Matt Trakker",
+   "bloc": "MASK",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 5,
+   "move": 4,
+   "march": 6,
+   "armor": 2,
+   "capturable": false,
+   "skills": [
+    "Jet Fighter"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Lasers",
+     "count": 2,
+     "range": 6,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Missile Launchers",
+     "count": 1,
+     "range": 8,
+     "specials": [],
+     "vsInfantry": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "mask--matt-trakker"
+  },
+  {
+   "id": "venom--miles-mayhem",
+   "name": "Miles Mayhem",
+   "subtitle": "Fondateur et chef de V.E.N.O.M.",
+   "bloc": "VENOM",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Leader",
+    "Strategist",
+    "Viper Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "venom--switchblade"
+  },
+  {
+   "id": "venom--switchblade",
+   "name": "Switchblade",
+   "subtitle": "Véhicule de Miles Mayhem",
+   "bloc": "VENOM",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 5,
+   "move": 4,
+   "march": 6,
+   "armor": 2,
+   "capturable": false,
+   "skills": [
+    "Jet Fighter"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Lasers",
+     "count": 2,
+     "range": 6,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Stinger Missile Launcher",
+     "count": 1,
+     "range": 8,
+     "specials": [],
+     "vsInfantry": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "venom--miles-mayhem"
+  },
+  {
+   "id": "mask--dusty-hayes",
+   "name": "Dusty Hayes",
+   "subtitle": "Agent de M.A.S.K. « Powderkeg »",
+   "bloc": "MASK",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "All-Terrain",
+    "Demolitions",
+    "Backlash Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "mask--gator"
+  },
+  {
+   "id": "mask--gator",
+   "name": "Gator",
+   "subtitle": "Véhicule de Dusty Hayes",
+   "bloc": "MASK",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 6,
+   "move": 3,
+   "march": 5,
+   "armor": 3,
+   "capturable": false,
+   "skills": [
+    "Amphibious"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Depth Charge",
+     "count": 1,
+     "range": 5,
+     "specials": [],
+     "vsInfantry": [
+      "B/2",
+      "B/2",
+      "B/1",
+      "B/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Freeze Gun",
+     "count": 1,
+     "range": 6,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "mask--dusty-hayes"
+  },
+  {
+   "id": "venom--cliff-dagger",
+   "name": "Cliff Dagger",
+   "subtitle": "Mercenaire de V.E.N.O.M. « Blaster »",
+   "bloc": "VENOM",
+   "type": "hero",
+   "faction": null,
+   "cost": 8,
+   "health": 4,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Demolitions",
+    "Strongman",
+    "Torch Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "venom--jackhammer"
+  },
+  {
+   "id": "venom--jackhammer",
+   "name": "Jackhammer",
+   "subtitle": "Véhicule de Cliff Dagger",
+   "bloc": "VENOM",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 8,
+   "health": 6,
+   "move": 2,
+   "march": 5,
+   "armor": 4,
+   "capturable": false,
+   "skills": [
+    "Armored Shield"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Dual Front Machine Guns",
+     "count": 2,
+     "range": 5,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Machine Gun Turret",
+     "count": 1,
+     "range": 6,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "venom--cliff-dagger"
+  },
+  {
+   "id": "mask--gloria-baker",
+   "name": "Gloria Baker",
+   "subtitle": "Agente de M.A.S.K. « Aura »",
+   "bloc": "MASK",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Martial Arts",
+    "Engineer",
+    "Aura Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "mask--shark"
+  },
+  {
+   "id": "mask--shark",
+   "name": "Shark",
+   "subtitle": "Véhicule de Gloria Baker",
+   "bloc": "MASK",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 5,
+   "move": 4,
+   "march": 6,
+   "armor": 2,
+   "capturable": false,
+   "skills": [
+    "Amphibious"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Laser Headlights",
+     "count": 2,
+     "range": 5,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Torpedo Launchers",
+     "count": 1,
+     "range": 7,
+     "specials": [],
+     "vsInfantry": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "mask--gloria-baker"
+  },
+  {
+   "id": "mask--hondo-maclean",
+   "name": "Hondo MacLean",
+   "subtitle": "Agent de M.A.S.K. « Striker »",
+   "bloc": "MASK",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Weapons Expert",
+    "Strategist",
+    "Blaster Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "mask--firecracker"
+  },
+  {
+   "id": "mask--firecracker",
+   "name": "Firecracker",
+   "subtitle": "Véhicule de Hondo MacLean",
+   "bloc": "MASK",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 6,
+   "move": 3,
+   "march": 5,
+   "armor": 3,
+   "capturable": false,
+   "skills": [
+    "All-Terrain",
+    "Hypno-Headlights"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Front Thermal Detonators",
+     "count": 1,
+     "range": 5,
+     "specials": [],
+     "vsInfantry": [
+      "B/2",
+      "B/2",
+      "B/1",
+      "B/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Rear Freeze Cannons",
+     "count": 2,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "mask--hondo-maclean"
+  },
+  {
+   "id": "mask--bruce-sato",
+   "name": "Bruce Sato",
+   "subtitle": "Agent de M.A.S.K. « Magic »",
+   "bloc": "MASK",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Engineer",
+    "Lifter Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "mask--rhino"
+  },
+  {
+   "id": "mask--rhino",
+   "name": "Rhino",
+   "subtitle": "Véhicule de Bruce Sato",
+   "bloc": "MASK",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 7,
+   "move": 2,
+   "march": 5,
+   "armor": 3,
+   "capturable": false,
+   "skills": [
+    "Battering Ram",
+    "Smokescreen"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Rocket Launcher",
+     "count": 1,
+     "range": 8,
+     "specials": [],
+     "vsInfantry": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Laser Cannons",
+     "count": 2,
+     "range": 5,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "mask--bruce-sato"
+  },
+  {
+   "id": "mask--buddie-hawks",
+   "name": "Buddie Hawks",
+   "subtitle": "Agent de M.A.S.K. « Clutch »",
+   "bloc": "MASK",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Disguise",
+    "Engineer",
+    "Penetrator Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "mask--wildcat"
+  },
+  {
+   "id": "mask--wildcat",
+   "name": "Wildcat",
+   "subtitle": "Véhicule de Buddie Hawks",
+   "bloc": "MASK",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 6,
+   "move": 3,
+   "march": 5,
+   "armor": 3,
+   "capturable": false,
+   "skills": [],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Concrete Cannons",
+     "count": 1,
+     "range": 6,
+     "specials": [],
+     "vsInfantry": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Saber Saw Blades",
+     "count": 1,
+     "range": 1,
+     "specials": [],
+     "vsInfantry": [
+      "2/2",
+      "2/2",
+      "1/2",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "mask--buddie-hawks"
+  },
+  {
+   "id": "venom--bruno-sheppard",
+   "name": "Bruno Sheppard",
+   "subtitle": "Mercenaire de V.E.N.O.M. « Mad Dog »",
+   "bloc": "VENOM",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Brawler",
+    "Disguise",
+    "Magna Beam Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "venom--stinger"
+  },
+  {
+   "id": "venom--stinger",
+   "name": "Stinger",
+   "subtitle": "Véhicule de Bruno Sheppard",
+   "bloc": "VENOM",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 6,
+   "move": 3,
+   "march": 5,
+   "armor": 4,
+   "capturable": false,
+   "skills": [
+    "Armored Shield"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Sniper Scope Cannons",
+     "count": 1,
+     "range": 9,
+     "specials": [],
+     "vsInfantry": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Retractable Wheel Guns",
+     "count": 2,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "venom--bruno-sheppard"
+  },
+  {
+   "id": "venom--floyd-malloy",
+   "name": "Floyd Malloy",
+   "subtitle": "Mercenaire de V.E.N.O.M. « Birdman »",
+   "bloc": "VENOM",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Forger",
+    "Stunt Rider",
+    "Buckshot Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "venom--vampire"
+  },
+  {
+   "id": "venom--vampire",
+   "name": "Vampire",
+   "subtitle": "Véhicule de Floyd Malloy",
+   "bloc": "VENOM",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 5,
+   "move": 4,
+   "march": 6,
+   "armor": 2,
+   "capturable": false,
+   "skills": [
+    "Jet Fighter"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Boomerang Atom Blaster",
+     "count": 1,
+     "range": 6,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Dreadwing Detonators",
+     "count": 1,
+     "range": 5,
+     "specials": [],
+     "vsInfantry": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "venom--floyd-malloy"
+  },
+  {
+   "id": "venom--sly-rax",
+   "name": "Sly Rax",
+   "subtitle": "Agent de V.E.N.O.M. « Wrecker »",
+   "bloc": "VENOM",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Saboteur",
+    "Demolitions",
+    "Stiletto Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "venom--piranha"
+  },
+  {
+   "id": "venom--piranha",
+   "name": "Piranha",
+   "subtitle": "Véhicule de Sly Rax",
+   "bloc": "VENOM",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 5,
+   "move": 4,
+   "march": 6,
+   "armor": 2,
+   "capturable": false,
+   "skills": [
+    "Amphibious"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Water Cannons",
+     "count": 2,
+     "range": 5,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Hidden Ground Torpedoes",
+     "count": 1,
+     "range": 6,
+     "specials": [],
+     "vsInfantry": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "venom--sly-rax"
+  },
+  {
+   "id": "venom--vanessa-warfield",
+   "name": "Vanessa Warfield",
+   "subtitle": "Agente de V.E.N.O.M. « Ice Queen »",
+   "bloc": "VENOM",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Infiltrator",
+    "Saboteur",
+    "Whip Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "venom--manta"
+  },
+  {
+   "id": "venom--manta",
+   "name": "Manta",
+   "subtitle": "Véhicule de Vanessa Warfield",
+   "bloc": "VENOM",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 5,
+   "move": 4,
+   "march": 6,
+   "armor": 2,
+   "capturable": false,
+   "skills": [
+    "Jet Fighter"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Trident Missile",
+     "count": 1,
+     "range": 8,
+     "specials": [],
+     "vsInfantry": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Grill Cannons",
+     "count": 2,
+     "range": 5,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "venom--vanessa-warfield"
+  },
+  {
+   "id": "venom--maximus-mayhem",
+   "name": "Maximus Mayhem",
+   "subtitle": "Frère jumeau de Miles Mayhem « Maxie »",
+   "bloc": "VENOM",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Racer",
+    "Deep Freeze Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "venom--buzzard"
+  },
+  {
+   "id": "venom--buzzard",
+   "name": "Buzzard",
+   "subtitle": "Véhicule de Maximus Mayhem",
+   "bloc": "VENOM",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 5,
+   "move": 4,
+   "march": 6,
+   "armor": 2,
+   "capturable": false,
+   "skills": [
+    "Jet Fighter"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Meltor Cannons",
+     "count": 2,
+     "range": 6,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Slicer Cannons",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "2/2",
+      "2/2",
+      "1/2",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "venom--maximus-mayhem"
+  },
+  {
+   "id": "venom--nash-gorey",
+   "name": "Nash Gorey",
+   "subtitle": "Agent de V.E.N.O.M. « Goon »",
+   "bloc": "VENOM",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Hacker",
+    "Powerhouse Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "venom--outlaw"
+  },
+  {
+   "id": "venom--outlaw",
+   "name": "Outlaw",
+   "subtitle": "Véhicule de Nash Gorey",
+   "bloc": "VENOM",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 7,
+   "move": 2,
+   "march": 5,
+   "armor": 3,
+   "capturable": false,
+   "skills": [
+    "Radar Scanners"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Howitzer",
+     "count": 1,
+     "range": 10,
+     "specials": [],
+     "vsInfantry": [
+      "B/2",
+      "B/2",
+      "B/1",
+      "B/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Grappling Hook",
+     "count": 1,
+     "range": 3,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "venom--nash-gorey"
+  },
+  {
+   "id": "venom--lester-sludge",
+   "name": "Lester Sludge",
+   "subtitle": "Agent de V.E.N.O.M. « Lizard »",
+   "bloc": "VENOM",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Havoc",
+    "Mudslinger Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "venom--iguana"
+  },
+  {
+   "id": "venom--iguana",
+   "name": "Iguana",
+   "subtitle": "Véhicule de Lester Sludge",
+   "bloc": "VENOM",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 5,
+   "move": 4,
+   "march": 6,
+   "armor": 2,
+   "capturable": false,
+   "skills": [
+    "Hyper Boosters",
+    "Armored Shield"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Rapid-fire Bazookas",
+     "count": 2,
+     "range": 6,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Circular Saw Blade",
+     "count": 1,
+     "range": 1,
+     "specials": [],
+     "vsInfantry": [
+      "2/2",
+      "2/2",
+      "1/2",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "venom--lester-sludge"
+  },
+  {
+   "id": "mask--hurricane",
+   "name": "Hurricane",
+   "subtitle": "Véhicule de M.A.S.K. « Night Stalker »",
+   "bloc": "MASK",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 6,
+   "move": 3,
+   "march": 5,
+   "armor": 3,
+   "capturable": false,
+   "skills": [
+    "Night Vision Scanner"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Infrared Blasters",
+     "count": 2,
+     "range": 5,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Gale Force Wind Howitzer",
+     "count": 1,
+     "range": 9,
+     "specials": [],
+     "vsInfantry": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ]
+  },
+  {
+   "id": "mask--julio-lopez",
+   "name": "Julio Lopez",
+   "subtitle": "Médecin de M.A.S.K. « Doc »",
+   "bloc": "MASK",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Medic",
+    "Streamer Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "mask--firefly"
+  },
+  {
+   "id": "mask--firefly",
+   "name": "Firefly",
+   "subtitle": "Véhicule de Julio Lopez",
+   "bloc": "MASK",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 5,
+   "move": 4,
+   "march": 6,
+   "armor": 2,
+   "capturable": false,
+   "skills": [
+    "Jet Fighter"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Tripod Laser",
+     "count": 1,
+     "range": 7,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Prism Beam Launchers",
+     "count": 2,
+     "range": 5,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "mask--julio-lopez"
+  },
+  {
+   "id": "mask--calhoun-burns",
+   "name": "Calhoun Burns",
+   "subtitle": "Architecte de M.A.S.K. « Stonewall »",
+   "bloc": "MASK",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Demolitions",
+    "Gulliver Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "mask--raven"
+  },
+  {
+   "id": "mask--raven",
+   "name": "Raven",
+   "subtitle": "Véhicule de Calhoun Burns",
+   "bloc": "MASK",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 5,
+   "move": 4,
+   "march": 6,
+   "armor": 2,
+   "capturable": false,
+   "skills": [
+    "Jet Fighter",
+    "Amphibious"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Wheel Particle Blasters",
+     "count": 2,
+     "range": 6,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Immobilizer Discs",
+     "count": 1,
+     "range": 5,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "mask--calhoun-burns"
+  },
+  {
+   "id": "mask--brad-turner",
+   "name": "Brad Turner",
+   "subtitle": "Musicien de M.A.S.K. « Chopper »",
+   "bloc": "MASK",
+   "type": "hero",
+   "faction": null,
+   "cost": 7,
+   "health": 3,
+   "move": 3,
+   "march": 4,
+   "armor": 1,
+   "capturable": false,
+   "skills": [
+    "Stunt Rider",
+    "Hocus Pocus Mask"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "count": 1,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "vehicle": "mask--condor"
+  },
+  {
+   "id": "mask--condor",
+   "name": "Condor",
+   "subtitle": "Véhicule de Brad Turner",
+   "bloc": "MASK",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 5,
+   "move": 4,
+   "march": 6,
+   "armor": 2,
+   "capturable": false,
+   "skills": [
+    "Jet Fighter"
+   ],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Antimatter Beam",
+     "count": 1,
+     "range": 7,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ],
+   "pilot": "mask--brad-turner"
+  },
+  {
+   "id": "mask--razorback",
+   "name": "Razorback",
+   "subtitle": "Véhicule de M.A.S.K. (Racing Series)",
+   "bloc": "MASK",
+   "type": "vehicle",
+   "faction": null,
+   "cost": 9,
+   "health": 6,
+   "move": 3,
+   "march": 5,
+   "armor": 3,
+   "capturable": false,
+   "skills": [],
+   "customSkills": [],
+   "weapons": [
+    {
+     "name": "Prism Missile",
+     "count": 1,
+     "range": 8,
+     "specials": [],
+     "vsInfantry": [
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/2",
+      "1/2",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    },
+    {
+     "name": "Sand Blasting Cannons",
+     "count": 4,
+     "range": 4,
+     "specials": [],
+     "vsInfantry": [
+      "2/1",
+      "2/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsVehicle": [
+      "1/1",
+      "1/1",
+      "1/1",
+      "1/1"
+     ],
+     "vsAircraft": []
+    }
+   ]
+  }
+ ]
+}

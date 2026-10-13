@@ -1,0 +1,21 @@
+{
+ "blocs": [
+  {
+   "id": "MASK",
+   "name": "M.A.S.K.",
+   "nameEn": "M.A.S.K.",
+   "color": "#2f6e8a",
+   "description": "Bloc d'exemple.",
+   "factions": []
+  },
+  {
+   "id": "VENOM",
+   "name": "V.E.N.O.M.",
+   "nameEn": "V.E.N.O.M.",
+   "color": "#8a2f3d",
+   "description": "Bloc d'exemple.",
+   "factions": []
+  }
+ ],
+ "platoons": []
+}

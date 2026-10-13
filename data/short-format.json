@@ -1,0 +1,78 @@
+{
+ "name": "Shot Format",
+ "game": "TACTICS: M.A.S.K.",
+ "tagline": "Modèle vierge",
+ "by": "Votre nom",
+ "duration": "30 à 45 minutes",
+ "budget": 40,
+ "heroBonus": 4,
+ "command": {
+  "types": [
+   "hero"
+  ]
+ },
+ "combatRequired": {
+  "types": [
+   "infantry"
+  ],
+  "maxArmor": 4
+ },
+ "combatOptional": {
+  "types": [
+   "infantry"
+  ],
+  "maxArmor": 3,
+  "count": 3
+ },
+ "vehicle": {
+  "types": [
+   "vehicle"
+  ],
+  "maxArmor": 5
+ },
+ "allowMercenaryArmy": true,
+ "allowMercenaries": false,
+ "allowCaptured": false,
+ "showFullBuilderLink": true,
+ "feedback": {
+  "label": "Donner mon avis",
+  "url": "https://discord.com/",
+  "intro": "Le Shot Format est en test. Vos retours aident à corriger les unités et à améliorer l'outil.",
+  "ask": [
+   "Le bloc et l'armée que vous avez construits (bouton « Partager » pour copier le lien).",
+   "Une unité, un coût ou une règle qui vous semble faux.",
+   "Ce qui vous a gêné ou manqué, sur téléphone ou sur ordinateur."
+  ]
+ },
+ "bannedSkills": {},
+ "bannedHeroes": [],
+ "firstTurnSkills": [
+  "Spy",
+  "Airborne"
+ ],
+ "settings": [
+  "Réglages d'exemple à remplacer."
+ ],
+ "reminders": [
+  "Rappels d'exemple à remplacer."
+ ],
+ "en": {
+  "duration": "30 to 45 minutes",
+  "feedback": {
+   "label": "Give feedback",
+   "intro": "The Shot Format is in testing. Your feedback helps us fix units and improve the tool.",
+   "ask": [
+    "The bloc and army you built (use “Share” to copy its link).",
+    "A unit, cost or rule that looks wrong.",
+    "Anything that bothered you or was missing, on phone or computer."
+   ]
+  },
+  "bannedSkills": {},
+  "settings": [
+   "Example settings to replace."
+  ],
+  "reminders": [
+   "Example reminders to replace."
+  ]
+ }
+}
