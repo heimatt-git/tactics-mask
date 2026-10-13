@@ -1,6 +1,6 @@
-// Page « Aide » : une courte notice par onglet (builder, Shot Format, Ma collection, Atelier), en français et en anglais.
+// Page « Aide » : une courte notice par onglet (builder, Ma collection, Atelier), en français et en anglais.
 import { LANG, initLang, setLang } from './i18n.js';
-import { esc, store, brandLogo, mountCredit, mountFeedback } from './ui.js';
+import { esc, store, brandLogo, mountCredit, mountFeedback, initCamp, mountCampPicker } from './ui.js';
 
 const L = (fr, en) => (LANG === 'en' ? en : fr);
 
@@ -55,27 +55,6 @@ const SECTIONS = () => [
     ],
   },
   {
-    id: 'shot',
-    title: L('Le Shot Format', 'The Shot Format'),
-    what: L(
-      "Une version courte pour des parties de 30 à 45 minutes : un héros, un à quatre escouades et un véhicule, 40 points (4 points de plus pour le héros dans une armée de faction ou mercenaire).",
-      'A short version for 30 to 45 minute games: one hero, one to four squads and one vehicle, 40 points (4 more for the hero in a faction or mercenary army).'),
-    steps: [
-      L("Choisissez un bloc et créez l'armée. Elle se présente en postes : unité de commandement, unités de combat, véhicule.",
-        'Pick a bloc and create the army. It is laid out as slots: command unit, combat units, vehicle.'),
-      L("Pour chaque poste, « Choisir » ouvre la liste des unités autorisées. Le bouton « i » à gauche d'une unité montre sa fiche sans quitter la liste.",
-        'For each slot, “Choose” opens the list of allowed units. The “i” button beside a unit shows its sheet without leaving the list.'),
-      L("Le bandeau indique les points et si l'armée est complète ; la rubrique « Vérification » liste ce qui manque.",
-        'The banner shows the points and whether the army is complete; the “Checks” box lists what is missing.'),
-      L("Les boutons « Partager », « Fiche de partie », « PDF » et « Texte » servent à envoyer, imprimer ou copier votre liste.",
-        'The “Share”, “Game sheet”, “PDF” and “Text” buttons send, print or copy your list.'),
-    ],
-    tips: [
-      L("Pas d'aéronef, pas d'avantage de peloton, pas de héros « surhumain » (Super Human), pas d'unité Strong Point.",
-        'No aircraft, no platoon advantage, no “Super Human” heroes, no Strong Point units.'),
-    ],
-  },
-  {
     id: 'collection',
     title: L('Ma collection', 'My collection'),
     what: L(
@@ -94,7 +73,6 @@ const SECTIONS = () => [
     tips: [
       L("Votre collection reste dans ce navigateur. Pensez à l'exporter régulièrement avec « Exporter (fichier JSON) » : un navigateur peut vider ses données, surtout sur téléphone. Le fichier sert aussi à la copier sur un autre appareil.",
         'Your collection stays in this browser. Remember to export it now and then with “Export (JSON file)”: a browser can clear its data, especially on a phone. The file also moves it to another device.'),
-      L("La collection n'existe pas dans le Shot Format.", 'The collection is not part of the Shot Format.'),
     ],
   },
   {
@@ -116,8 +94,8 @@ const SECTIONS = () => [
     tips: [
       L("Votre projet reste dans ce navigateur tant que vous ne l'exportez pas : exportez-le pour le garder, et rechargez le fichier avec « Reprendre un projet » pour continuer.",
         'Your project stays in this browser until you export it: export it to keep it, and reload the file with “Resume a project” to continue.'),
-      L("Dans le builder, les créations CONFIDENTIAL ne se voient que si l'option est cochée ; elles ne sont pas dans le Shot Format.",
-        'In the builder, CONFIDENTIAL creations only show if the option is ticked; they are not in the Shot Format.'),
+      L("Dans le builder, les créations CONFIDENTIAL ne se voient que si l'option est cochée ",
+        'In the builder, CONFIDENTIAL creations only show if the option is ticked'),
       L("Proposez uniquement vos propres créations, et des photos de vos propres figurines.",
         'Only submit your own creations, and photos of your own miniatures.'),
     ],
@@ -143,6 +121,7 @@ const SECTIONS = () => [
 ];
 
 initLang();
+initCamp();
 mountCredit();
 render();
 
@@ -156,7 +135,6 @@ function render() {
     <nav class="topnav">
       <a href="index.html">${L('Builder', 'Builder')}</a>
       <a href="index.html#/collection">${L('Ma collection', 'My collection')}</a>
-      <a href="shot.html">Shot Format</a>
       <a href="atelier.html">${L('Atelier', 'Workshop')}</a>
       <a href="aide.html" class="on">${L('Aide', 'Help')}</a>
       <button id="lang-btn" type="button" lang="${LANG === 'fr' ? 'en' : 'fr'}" title="${LANG === 'fr' ? 'English version' : 'Version française'}">${LANG === 'fr' ? 'EN' : 'FR'}</button>
@@ -182,6 +160,7 @@ function render() {
     </details>`).join('')}
   </main>`;
   mountFeedback();
+  mountCampPicker();
   document.getElementById('lang-btn').addEventListener('click', () => { setLang(LANG === 'fr' ? 'en' : 'fr'); location.reload(); });
   document.getElementById('theme-btn').addEventListener('click', () => {
     const r = document.documentElement;
