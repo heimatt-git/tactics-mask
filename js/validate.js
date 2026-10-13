@@ -1,7 +1,7 @@
 // Validation de la base — utilisée par l'éditeur (navigateur) et par la CI GitHub (Node)
 import { t } from './i18n.js';
 
-export const UNIT_TYPES = ['infantry', 'vehicle', 'aircraft', 'hero', 'token'];
+export const UNIT_TYPES = ['infantry', 'vehicle', 'hero', 'token'];
 const ATTACK = /^([0-9]+|B|BB|DB)\/([0-9]+|AK)$/;
 
 // extraIds : identifiants d'unités CONFIDENTIAL (data/custom.json), acceptés pour les photos
@@ -40,13 +40,16 @@ export function validateData(unitsFile, blocsFile, skills, photos = {}, extraIds
     for (const k of ['armor', 'health', 'move', 'march']) {
       if (u[k] !== null && u[k] !== undefined && !Number.isInteger(u[k]) && !(k === 'health' && /^\d+x\d+$/.test(u[k]))) W(t("{w} : {k} n'est pas un nombre ({v}).", { w: where, k, v: u[k] }));
     }
+    // Classes : infanterie et héros de 1 à 3 ; véhicules de 1 à 4 (1 moto/quad, 2 voiture, 3 pick-up, 4 camion)
+    if (Number.isInteger(u.armor) && u.type !== 'token') { const mx = u.type === 'vehicle' ? 4 : 3; if (u.armor < 1 || u.armor > mx) W(t('{w} : la classe doit être comprise entre 1 et {m} (ici {v}).', { w: where, m: mx, v: u.armor })); }
     if (u.type !== 'token' && (u.armor === null || u.armor === undefined)) W(t('{w} : armure non renseignée.', { w: where }));
     for (const s of u.skills || []) usedSkills.add(s);
     for (const [j, w] of (u.weapons || []).entries()) {
       if (!w.name) E(t('{w} : arme #{n} sans nom.', { w: where, n: j + 1 }));
       for (const s of w.specials || []) usedSkills.add(s);
-      for (const k of ['vsInfantry', 'vsVehicle', 'vsAircraft']) {
+      for (const k of ['vsInfantry', 'vsVehicle']) {
         if (!Array.isArray(w[k])) { E(t('{w} / {a} : {k} doit être une liste.', { w: where, a: w.name, k })); continue; }
+        if (w[k].length > (k === 'vsInfantry' ? 3 : 4)) W(t('{w} / {a} : trop de valeurs pour {k} ({n}).', { w: where, a: w.name, k, n: w[k].length }));
         for (const v of w[k]) if (!ATTACK.test(v)) W(t("{w} / {a} : valeur d'attaque inhabituelle « {v} » ({k}).", { w: where, a: w.name, v, k }));
       }
     }
