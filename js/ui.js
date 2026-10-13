@@ -86,7 +86,6 @@ export function unitCardHTML(u, data, { cost, captured, extraChips = '', topHTML
   const ws = u.weapons || [];
   const nI = Math.max(0, ...ws.map((w) => w.vsInfantry?.length || 0));
   const nV = Math.max(0, ...ws.map((w) => w.vsVehicle?.length || 0));
-  const nA = Math.max(0, ...ws.map((w) => w.vsAircraft?.length || 0));
   const head = (n, label) => n ? `<th colspan="${n}" class="grp">${label}</th>` : '';
   const sub = (n) => Array.from({ length: n }, (_, i) => `<th${i === 0 ? ' class="grp"' : ''}>${i + 1}</th>`).join('');
   const skills = [
@@ -120,18 +119,18 @@ export function unitCardHTML(u, data, { cost, captured, extraChips = '', topHTML
       <div class="eyebrow" style="margin-bottom:6px">${t('Armes')}</div>
       <div class="wtable-wrap"><table class="wt">
         <thead>
-          <tr><th rowspan="2" style="text-align:left">${t('Arme')}</th><th rowspan="2">${t('Nb')}</th><th rowspan="2">${t('Portée')}</th>${head(nI, t('vs Infanterie'))}${head(nV, t('vs Véhicule'))}${head(nA, t('vs Aéronef'))}</tr>
-          <tr>${sub(nI)}${sub(nV)}${sub(nA)}</tr>
+          <tr><th rowspan="2" style="text-align:left">${t('Arme')}</th><th rowspan="2">${t('Nb')}</th><th rowspan="2">${t('Portée')}</th>${head(nI, t('vs Infanterie'))}${head(nV, t('vs Véhicule'))}</tr>
+          <tr>${sub(nI)}${sub(nV)}</tr>
         </thead>
         <tbody>
         ${ws.map((w) => `<tr>
           <td class="wn">${esc(w.name)}${w.mount ? ` <span class="sp">· ${esc(w.mount)}</span>` : ''}${w.ammo ? ` <span class="sp">· ${esc(t('munitions {n}', { n: w.ammo }))}</span>` : ''}${(w.specials || []).length ? `<br><span class="sp">${w.specials.map(esc).join(', ')}</span>` : ''}</td>
           <td class="v">${esc(w.count ?? '')}</td><td class="v">${esc(w.range ?? '')}</td>
-          ${attackCells(w.vsInfantry || [], nI)}${attackCells(w.vsVehicle || [], nV)}${attackCells(w.vsAircraft || [], nA)}
+          ${attackCells(w.vsInfantry || [], nI)}${attackCells(w.vsVehicle || [], nV)}
         </tr>`).join('')}
         </tbody>
       </table></div>
-      <p class="legend">${t("Chaque case indique <b>dés / dommages</b> contre la classe d'armure correspondante (1 à 4 pour l'infanterie, 1 à 7 pour les véhicules). « B », « BB », « DB » : attaques à gabarit (zone), voir le livre de règles.")}</p>
+      <p class="legend">${t("Chaque case indique <b>dés / dommages</b> contre la classe d'armure correspondante (1 à 3 pour l'infanterie ; 1 à 4 pour les véhicules : 1 moto ou quad, 2 voiture, 3 pick-up, 4 camion). « B », « BB », « DB » : attaques à gabarit (zone), voir le livre de règles.")}</p>
     </div>` : ''}
     ${skills.length || wSpecials.length ? `
     <div>
