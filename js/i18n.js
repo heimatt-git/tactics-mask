@@ -27,7 +27,7 @@ export function t(fr, vars) {
 
 const EN = {
   // Types d'unités
-  'Infanterie': 'Infantry', 'Véhicule': 'Vehicle', 'Aéronef': 'Aircraft', 'Héros': 'Hero', 'Objet': 'Token',
+  'Infanterie': 'Infantry', 'Véhicule': 'Vehicle', 'Héros': 'Hero', 'Objet': 'Token',
 
   // Interface commune
   'Copié dans le presse-papiers': 'Copied to clipboard',
@@ -39,10 +39,10 @@ const EN = {
   'Capturé (+2)': 'Captured (+2)', 'Capturable': 'Capturable',
   'Points': 'Points', 'Armure': 'Armor', 'Santé': 'Health', 'Mouv.': 'Move', 'Marche': 'March',
   'Armes': 'Weapons', 'Arme': 'Weapon', 'Nb': 'Qty', 'Portée': 'Range',
-  'vs Infanterie': 'vs Infantry', 'vs Véhicule': 'vs Vehicle', 'vs Aéronef': 'vs Aircraft',
+  'vs Infanterie': 'vs Infantry', 'vs Véhicule': 'vs Vehicle',
   'munitions {n}': 'ammo {n}',
-  "Chaque case indique <b>dés / dommages</b> contre la classe d'armure correspondante (1 à 4 pour l'infanterie, 1 à 7 pour les véhicules). « B », « BB », « DB » : attaques à gabarit (zone), voir le livre de règles.":
-    'Each cell shows <b>dice / damage</b> against the matching armor class (1–4 for infantry, 1–7 for vehicles). “B”, “BB”, “DB”: template (area) attacks, see the rulebook.',
+  "Chaque case indique <b>dés / dommages</b> contre la classe d'armure correspondante (1 à 3 pour l'infanterie ; 1 à 4 pour les véhicules : 1 moto ou quad, 2 voiture, 3 pick-up, 4 camion). « B », « BB », « DB » : attaques à gabarit (zone), voir le livre de règles.":
+    'Each cell shows <b>dice / damage</b> against the matching armor class (1–3 for infantry; 1–4 for vehicles: 1 motorbike or quad, 2 car, 3 pick-up, 4 truck). “B”, “BB”, “DB”: template (area) attacks, see the rulebook.',
   'Compétences': 'Skills', "règle d'arme": 'weapon rule',
   'Description absente de la base (voir le livre de règles).': 'No description in the database (see the rulebook).',
   "Règle d'arme spéciale : voir « Armes spéciales » dans le livre de règles.": 'Special weapon rule: see “Special Weapons” in the rulebook.',
@@ -76,7 +76,6 @@ const EN = {
   'Unité de commandement': 'Command unit', 'Commandement': 'Command', 'Un héros': 'One hero',
   'Unité de combat {n}': 'Combat unit {n}', 'Combat {n}': 'Combat {n}',
   'Escouade, armure {n} max.': 'Squad, armor {n} max.',
-  "Armure {n} max., pas d'aéronef": 'Armor {n} max., no aircraft',
   '{x} interdit': '{x} not allowed', 'héros interdit dans ce format': 'hero not allowed in this format',
   '{slot} : obligatoire.': '{slot}: required.',
   "n'appartient pas au bloc {b}": 'not part of the {b} bloc',
@@ -153,6 +152,8 @@ const EN = {
   "Sauvegarde locale indisponible (navigation privée ?) : utilisez « Partager » pour garder votre liste.": "Local saving unavailable (private browsing?): use “Share” to keep your list.",
   "Mes listes": "My lists",
   "Changer de thème": "Change theme",
+  "{w} : la classe doit être comprise entre 1 et {m} (ici {v}).": "{w}: the class must be between 1 and {m} (here {v}).",
+  "{w} / {a} : trop de valeurs pour {k} ({n}).": "{w} / {a}: too many values for {k} ({n}).",
   "Mixte": "Mixed",
   "Changer de camp": "Switch side",
   "Outil communautaire · base {v}": "Community tool · database {v}",
@@ -243,9 +244,8 @@ const EN = {
   "Toute personne qui ouvre ce lien reçoit une copie de votre liste, modifiable de son côté.": "Anyone who opens this link gets their own editable copy of your list.",
   "Arm": "Arm",
   "Mv": "Mv",
-  "Inf 1-4": "Inf 1-4",
-  "Véh 1-7": "Veh 1-7",
-  "Aéro": "Air",
+  "Inf 1-3": "Inf 1-3",
+  "Véh 1-4": "Veh 1-4",
   "Images de cartes indisponibles dans ce navigateur (navigation privée ?).": "Card images unavailable in this browser (private browsing?).",
   "Agrandir le {s}": "Enlarge the {s}",
   "{s} de la carte {n}": "{s} of the {n} card",
@@ -354,8 +354,8 @@ const EN = {
   "Munitions": "Ammo",
   "Montage": "Mount",
   "Règles spéciales (virgules)": "Special rules (commas)",
-  "vs Infanterie (1→4)": "vs Infantry (1→4)",
-  "vs Véhicule (1→7)": "vs Vehicle (1→7)",
+  "vs Infanterie (1→3)": "vs Infantry (1→3)",
+  "vs Véhicule (1→4)": "vs Vehicle (1→4)",
   "+ Arme": "+ Weapon",
   "Voir la carte": "View card",
   "Annuler les modifications de cette fiche": "Undo changes to this card",
