@@ -5,7 +5,7 @@ import { typeLabel } from './data.js';
 import { blocName, factionName } from './rules.js';
 import * as C from './collection.js';
 
-const TYPE_ORDER = ['hero', 'infantry', 'vehicle', 'aircraft', 'token'];
+const TYPE_ORDER = ['hero', 'infantry', 'vehicle', 'token'];
 const PREF = 'mask.collectionView';
 const V = { view: 'owned', bloc: 'all', type: 'all', q: '', conf: false, listId: '',
   fac: 'all', obloc: 'all', ofac: 'all',                  // filtres bloc / sous-faction (ajout : bloc, fac ; possédé : obloc, ofac)
