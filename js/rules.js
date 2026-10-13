@@ -80,7 +80,7 @@ export function analyzeArmy(list, data) {
     if (!isJoiner(r.u)) { warnings.push(t("{name} n'est ni un héros ni un commissaire et ne peut pas rejoindre une unité.", { name: r.u.name })); continue; }
     if (tg.u.type === 'infantry' || (tg.u.type === 'hero' && isCommissar(r.u))) {
       if (tg.u.armor !== r.u.armor) errors.push(t("{name} (armure {a}) ne peut rejoindre {target} (armure {b}) : les valeurs d'armure doivent être identiques.", { name: r.u.name, a: r.u.armor, target: tg.u.name, b: tg.u.armor }));
-    } else if (tg.u.type === 'vehicle' || tg.u.type === 'aircraft') {
+    } else if (tg.u.type === 'vehicle') {
       if (!canPilot(r.u, tg.u)) errors.push(t("{name} n'a pas la compétence nécessaire pour piloter {target}.", { name: r.u.name, target: tg.u.name }));
     } else {
       errors.push(t('{name} ne peut pas rejoindre {target}.', { name: r.u.name, target: tg.u.name }));
