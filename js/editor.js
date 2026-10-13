@@ -239,9 +239,8 @@ function unitForm(u, o = {}) {
         </div>
         <label class="field"><span>${t('Règles spéciales (virgules)')}</span><input type="text" name="w-specials-${i}" list="skills-dl" value="${esc((w.specials || []).join(', '))}"></label>
         <div class="row2">
-          <label class="field"><span>${t('vs Infanterie (1→4)')}</span><input type="text" name="w-inf-${i}" value="${esc((w.vsInfantry || []).join(' '))}"></label>
-          <label class="field"><span>${t('vs Véhicule (1→7)')}</span><input type="text" name="w-veh-${i}" value="${esc((w.vsVehicle || []).join(' '))}"></label>
-          <label class="field"><span>${t('vs Aéronef')}</span><input type="text" name="w-air-${i}" value="${esc((w.vsAircraft || []).join(' '))}"></label>
+          <label class="field"><span>${t('vs Infanterie (1→3)')}</span><input type="text" name="w-inf-${i}" value="${esc((w.vsInfantry || []).join(' '))}"></label>
+          <label class="field"><span>${t('vs Véhicule (1→4)')}</span><input type="text" name="w-veh-${i}" value="${esc((w.vsVehicle || []).join(' '))}"></label>
         </div>
       </div>`).join('')}
       <div><button type="button" class="btn sm" id="add-w">${t('+ Arme')}</button></div>
@@ -281,7 +280,6 @@ function readUnitForm(form, u, blocs = E.d.blocsFile.blocs) {
     nw.specials = list(g(`w-specials-${i}`));
     nw.vsInfantry = attacks(g(`w-inf-${i}`));
     nw.vsVehicle = attacks(g(`w-veh-${i}`));
-    nw.vsAircraft = attacks(g(`w-air-${i}`));
     return nw;
   });
 }
@@ -301,7 +299,7 @@ function bindUnitForm(body, u, o = {}) {
     }
   });
   form.addEventListener('submit', (e) => e.preventDefault());
-  form.querySelector('#add-w').addEventListener('click', () => { apply(); u.weapons.push({ name: t('Nouvelle arme'), count: 1, range: 1, specials: [], vsInfantry: [], vsVehicle: [], vsAircraft: [] }); saveDraft(); render(); });
+  form.querySelector('#add-w').addEventListener('click', () => { apply(); u.weapons.push({ name: t('Nouvelle arme'), count: 1, range: 1, specials: [], vsInfantry: [], vsVehicle: [] }); saveDraft(); render(); });
   form.querySelector('#add-cs').addEventListener('click', () => { apply(); (u.customSkills ||= []).push({ name: '', description: '' }); saveDraft(); render(); });
   form.querySelectorAll('[data-rmw]').forEach((b) => b.addEventListener('click', () => { apply(); u.weapons.splice(+b.dataset.rmw, 1); saveDraft(); render(); }));
   form.querySelectorAll('[data-wup]').forEach((b) => b.addEventListener('click', () => { apply(); const i = +b.dataset.wup; [u.weapons[i - 1], u.weapons[i]] = [u.weapons[i], u.weapons[i - 1]]; saveDraft(); render(); }));
