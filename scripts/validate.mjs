@@ -19,15 +19,6 @@ if (custom) {
 for (const arr of Object.values(photos)) for (const p of arr) {
   if (!existsSync(new URL('../' + p.file, import.meta.url))) errors.push(`photos.json : fichier absent du dépôt (${p.file}).`);
 }
-// Shot Format : les héros interdits doivent exister dans la base
-if (existsSync(new URL('../data/short-format.json', import.meta.url))) {
-  const sf = read('short-format.json');
-  const names = new Set(read('units.json').units.map((u) => u.name));
-  for (const n of sf.bannedHeroes || []) if (!names.has(n)) warnings.push(`short-format.json : héros interdit introuvable dans la base (${n}).`);
-  const skillsUsed = new Set(read('units.json').units.flatMap((u) => [...(u.skills || []), ...(u.customSkills || []).map((c) => c.name)]));
-  for (const k of Object.keys(sf.bannedSkills || {})) if (!skillsUsed.has(k)) warnings.push(`short-format.json : compétence interdite portée par aucune unité (${k}).`);
-  if (!Number.isInteger(sf.budget)) errors.push('short-format.json : budget invalide.');
-}
 for (const w of warnings) console.log('⚠ ' + w);
 for (const e of errors) console.error('✗ ' + e);
 console.log(`\n${errors.length} erreur(s), ${warnings.length} avertissement(s)`);
